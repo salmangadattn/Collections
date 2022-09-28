@@ -4,13 +4,13 @@ import java.util.Objects;
 
 public class Employee {
 
-    private String name;
+    private final String name;
 
-    private double age;
+    private final double age;
 
-    private double salary;
+    private final double salary;
 
-    private String designation;
+    private final String designation;
 
     public Employee(String name, double age, double salary, String designation) {
         this.name = name;
@@ -23,7 +23,9 @@ public class Employee {
         return salary;
     }
 
-    public String getName(){ return name;}
+    public String getName() {
+        return name;
+    }
 
 
     //Avoid adding duplicate objects

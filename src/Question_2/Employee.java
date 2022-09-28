@@ -1,6 +1,6 @@
 package Question_2;
 
-public class Employee implements Comparable<Employee>{
+public class Employee implements Comparable<Employee> {
 
     public String name;
 

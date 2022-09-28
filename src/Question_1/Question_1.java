@@ -10,27 +10,27 @@ import java.util.List;
      */
 public class Question_1 {
 
-        public static void main(String[] args) {
+    public static void main(String[] args) {
 
-            List<Float> list = new ArrayList<>();
+        List<Float> list = new ArrayList<>();
 
-            list.add(2.3F);
-            list.add(6.3F);
-            list.add(0.3F);
-            list.add(3.3F);
-            list.add(2.8F);
+        list.add(2.3F);
+        list.add(6.3F);
+        list.add(0.3F);
+        list.add(3.3F);
+        list.add(2.8F);
 
-            float sum = 0F;
+        float sum = 0F;
 
-            Iterator<Float> iterator = list.listIterator();
+        Iterator<Float> iterator = list.listIterator();
 
-            while (iterator.hasNext()){
-                float num = (float)iterator.next();
-                sum+=num;
-            }
-
-            System.out.println("Required sum is : "+sum);
-
+        while (iterator.hasNext()) {
+            float num = iterator.next();
+            sum += num;
         }
+
+        System.out.println("Required sum is : " + sum);
+
+    }
 
 }
