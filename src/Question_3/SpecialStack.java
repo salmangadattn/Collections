@@ -2,32 +2,73 @@ package Question_3;
 
 import java.util.Stack;
 
-public class SpecialStack extends Stack<Integer> {
+public class SpecialStack {
 
-    Stack<Integer> minStack = new Stack<>();
+    Stack<Integer> s;
+    Integer minEle;
+
+    SpecialStack() {
+        s = new Stack<Integer>();
+    }
+
+    void getMin() {
+
+        if (s.isEmpty())
+            System.out.println("Stack is empty");
+
+        else
+            System.out.println("Minimum Element in the " + " stack is: " + minEle);
+    }
+
+    void peek() {
+        if (s.isEmpty()) {
+        System.out.println("Stack is empty "); return;
+    }
+
+        Integer t = s.peek(); // Top element.
+
+        System.out.print("Top Most Element is: ");
+
+        if (t < minEle)
+            System.out.println(minEle);
+        else
+            System.out.println(t);
+    }
+
+    void pop() {
+        if (s.isEmpty()) {
+        System.out.println("Stack is empty");
+        return;
+    }
+
+        System.out.print("Top Most Element Removed: ");
+        Integer t = s.pop();
 
 
-    public void push(int x) {
-        if (isEmpty()) {
-            super.push(x);
-            minStack.push(x);
-        } else {
-            super.push(x);
-            int y = minStack.pop();
-            minStack.push(y);
-            minStack.push(Math.min(x, y));
+        if (t < minEle) {
+            System.out.println(minEle);
+            minEle = 2 * minEle - t;
         }
+
+        else
+            System.out.println(t);
     }
 
-    public Integer pop() {
-        int x = super.pop();
-        minStack.pop();
-        return x;
-    }
+    void push(Integer x) {
+        if (s.isEmpty()) {
+            minEle = x;
+            s.push(x);
+            System.out.println("Number Inserted: " + x);
+            return;
+        }
 
-    public int getMin() {
-        int x = minStack.pop();
-        minStack.push(x);
-        return x;
+
+        if (x < minEle) {
+            s.push(2 * x - minEle);
+            minEle = x;
+        } else
+            s.push(x);
+
+        System.out.println("Number Inserted: " + x);
     }
 }

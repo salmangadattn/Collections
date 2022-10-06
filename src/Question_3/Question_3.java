@@ -7,13 +7,12 @@ public class Question_3 {
 
         SpecialStack s = new SpecialStack();
 
-        s.push(11);
-        s.push(20);
-        s.push(30);
-        s.push(12);
-        s.push(13);
-        s.push(19);
+        s.push(2);
+        s.push(3);
+        s.getMin();
+        s.push(1);
+        s.push(4);
+        s.getMin();
 
-        System.out.println(s.getMin());
     }
 }
